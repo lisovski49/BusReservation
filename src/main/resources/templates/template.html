@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bus Ticket</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .ticket {
+            background: #ffffff;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e0e0e0;
+        }
+
+        h2 {
+            text-align: center;
+            color: #0056b3;
+            margin-bottom: 20px;
+        }
+
+        .ticket-info {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            color: #0056b3;
+            margin-bottom: 5px;
+        }
+
+        .textColor {
+            color: #333;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: -10px;
+        }
+
+        .col-md-6 {
+            flex: 1;
+            min-width: 250px;
+            padding: 10px;
+        }
+
+        .note {
+            margin-top: 20px;
+            font-style: italic;
+            font-size: 14px;
+            color: #666;
+            text-align: center;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            margin-top: 20px;
+            color: #aaa;
+        }
+
+        .highlight {
+            font-size: 18px;
+            color: #ff5722;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="ticket">
+    <h2>Bus Ticket</h2>
+    <div class="ticket-info">
+        <div class="row">
+            <div class="col-md-6">
+                <label>Date of Departure:</label>
+                <div class="textColor"><p th:text="${date}">2024-11-26</p></div>
+            </div>
+            <div class="col-md-6">
+                <label>Name of Primary Passenger:</label>
+                <div class="textColor"><p th:text="${name}">John Doe</p></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label>Ticket No:</label>
+                <div class="textColor highlight"><p>#123456</p></div>
+            </div>
+            <div class="col-md-6">
+                <label>No. of Passengers Traveling:</label>
+                <div class="textColor"><p th:text="${noOfPass}">2</p></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label>Departure:</label>
+                <div class="textColor"><p th:text="${From}">New York</p></div>
+            </div>
+            <div class="col-md-6">
+                <label>Destination:</label>
+                <div class="textColor"><p th:text="${to}">Boston</p></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label>Bus Name:</label>
+                <div class="textColor"><p th:text="${busName}">Express Line</p></div>
+            </div>
+        </div>
+    </div>
+    <div class="note">
+        <p>Note: Please bring the Primary Passenger's ID Proof along with this ticket.</p>
+    </div>
+    <div class="footer">
+        &copy; 2024 Bus Reservation System. All rights reserved.
+    </div>
+</div>
+</body>
+</html>

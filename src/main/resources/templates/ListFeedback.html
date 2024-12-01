@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Отзывы</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin-top: 80px;
+      background-color: #f4f4f9;
+    }
+
+    .navbar {
+      background-color: #007bff;
+    }
+
+    .navbar h1 {
+      color: #ffffff;
+      margin: 0;
+    }
+
+    .navbar-nav .nav-link {
+      color: #ffffff !important;
+      margin-left: 15px;
+      border-radius: 30px;
+      padding: 10px 20px;
+      transition: all 0.3s;
+      background-color: #0056b3;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #ffffff !important;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      transform: translateY(-2px);
+      background-color: #004494;
+      border: 2px solid #ffffff;
+    }
+
+    .container {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      margin-bottom: 30px;
+    }
+
+    h3 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .btn-danger {
+      background-color: #dc3545;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      padding: 10px 20px;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .btn-danger:hover {
+      background-color: #c82333;
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 30px;
+      padding: 20px 0;
+      background-color: #007bff;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container">
+    <a class="navbar-brand" href="#">Bus Reservation Admin Dashboard</a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/feedback}">
+            <i class="fas fa-comments"></i> Feedbacks
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/adminScreen/allRecords}">
+            <i class="fas fa-table"></i> All Records
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/logout}">
+            <i class="fas fa-sign-out-alt"></i> Logout
+          </a>
+        </li>
+      </ul>
+      <span class="navbar-text ml-3">
+                Hi, Welcome
+            </span>
+    </div>
+  </div>
+</nav>
+
+
+  <h3>Список отзывов</h3>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Имя</th>
+      <th>Email</th>
+      <th>Рейтинг</th>
+      <th>Комментарий</th>
+      <th>Действия</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="feedback : ${feedbacks}">
+      <td th:text="${feedback.name}"></td>
+      <td th:text="${feedback.emailId}"></td>
+      <td th:text="${feedback.rating}"></td>
+      <td th:text="${feedback.comments}"></td>
+      <td>
+        <a th:href="@{/feedback/delete/{id}(id=${feedback.id})}" class="btn btn-danger">Удалить</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<footer>
+  <p>&copy; 2024 Bus Reservation System. Все права защищены.</p>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
