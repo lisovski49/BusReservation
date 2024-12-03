@@ -76,66 +76,66 @@
 </nav>
 
 <div class="container">
-    <h1 class="text-center mb-4">Booking Details</h1>
+    <h1 class="text-center mb-4">Детали бронирования</h1>
     <div th:if="${param.success}">
         <div class="alert alert-success">
-            Your booking is successful! Check your bookings in the "My Bookings" section on the dashboard.
+            Ваш заказ прошел успешно!
         </div>
     </div>
     <form th:action="@{/dashboard/booking}" method="post" th:object="${record}">
         <div class="row g-4">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="from" class="form-label">From</label>
+                    <label for="from" class="form-label">Откуда</label>
                     <input type="text" id="from" class="form-control" th:field="*{fromDestination}" required readonly>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="to" class="form-label">To</label>
+                    <label for="to" class="form-label">Куда</label>
                     <input type="text" id="to" class="form-control" th:field="*{toDestination}" required readonly>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="filterDate" class="form-label">Date</label>
+                    <label for="filterDate" class="form-label">Дата</label>
                     <input type="date" id="filterDate" class="form-control" th:field="*{filterDate}" required readonly>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="price" class="form-label">Price</label>
+                    <label for="price" class="form-label">Цена</label>
                     <input type="text" id="price" class="form-control" th:field="*{price}" required readonly>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="noOfPersons" class="form-label">Number of Persons</label>
+                    <label for="noOfPersons" class="form-label">Количество пассажиров</label>
                     <input type="number" id="noOfPersons" class="form-control" th:field="*{noOfPersons}" required
                            min="1" onchange="updateFiled();">
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="totalCalculated" class="form-label">Total Amount</label>
+                    <label for="totalCalculated" class="form-label">Общая стоимость</label>
                     <input type="text" id="totalCalculated" class="form-control" th:field="*{totalCalculated}" readonly>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="busName" class="form-label">Bus Name</label>
+                    <label for="busName" class="form-label">Модель</label>
                     <input type="text" id="busName" class="form-control" th:field="*{busName}" required readonly>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="time" class="form-label">Departure Time</label>
+                    <label for="time" class="form-label">Время отправления</label>
                     <input type="text" id="time" class="form-control" th:field="*{time}" required readonly>
                 </div>
             </div>
         </div>
         <div class="mt-4 text-center">
-            <button type="submit" class="btn btn-primary">Pay</button>
+            <button type="submit" class="btn btn-primary">Оплатить</button>
         </div>
     </form>
 </div>

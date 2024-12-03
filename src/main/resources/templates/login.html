@@ -125,11 +125,11 @@
 
                 <li class="nav-item">
                     <a class="nav-link" href="#">
-                        <i class="fas fa-question-circle"></i> Help
+                        <i class="fas fa-question-circle"></i> Помощь
                     </a>
                 </li>
             </ul>
-            <span class="navbar-text">Hi, Welcome</span>
+            <span class="navbar-text">Добро пожаловать!</span>
         </div>
     </div>
 </nav>
@@ -139,11 +139,11 @@
 <div class="main-container">
     <div class="container">
         <form th:action="@{/login}" method="post" th:object="${user}">
-            <h3>Login</h3>
+            <h3>Авторизация</h3>
 
             <!-- Ошибка входа -->
             <div th:if="${param.error}">
-                <div class="alert alert-info">Email or Password entered is Wrong. Please Check and Login Again.</div>
+                <div class="alert alert-info">Email или пароль неверны. Попробуйте снова.</div>
             </div>
 
             <!-- Email -->
@@ -154,16 +154,16 @@
 
             <!-- Password -->
             <div class="form-group">
-                <label for="password">Password</label>
+                <label for="password">Пароль</label>
                 <input id="password" class="form-control" type="password" th:field="*{password}" required autofocus="autofocus"/>
             </div>
 
             <!-- Кнопка отправки -->
             <div class="form-group text-center">
-                <button type="submit" class="btn-upload">Log In</button>
+                <button type="submit" class="btn-upload">Войти</button>
             </div>
             <div class="form-group text-center">
-                <span>New User? <a href="/registration">Register here</a></span>
+                <span>Новый пользователь? <a href="/registration">Зарегистрироваться</a></span>
             </div>
         </form>
     </div>
@@ -171,7 +171,7 @@
 
 <!-- Нижний колонтитул -->
 <footer>
-    <p>&copy; 2024 Bus Reservation System. All Rights Reserved.</p>
+    <p>&copy; 2024 Bus Reservation System. Все права защищены.</p>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
